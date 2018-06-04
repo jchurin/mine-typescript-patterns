@@ -8,7 +8,7 @@ export class ClassicSingleton {
 
     public static getInstance(): ClassicSingleton {
         if (this.instance === null) {
-            this.instance = new ClassicSingleton(); 
+            this.instance = new ClassicSingleton();
         }
         return this.instance;
     }

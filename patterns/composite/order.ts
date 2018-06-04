@@ -27,15 +27,13 @@ export class Order extends CompoundProduct {
      * @param finalQuantity 
      */
     public establishQuantity(product: PriceInterface, finalQuantity: number): void {
-        // if (product instanceof UnitProduct) {
-        //     (
-        //         (UnitProduct) super.getProducts()
-        //             .get(
-        //                 super.getProducts()
-        //                     .indexOf(product)
-        //             )
-        //     ).setQuantity(finalQuantity);
-        // }
+        if (product instanceof UnitProduct) {
+            const unitProduct = super.getProducts()[
+                super.getProducts().indexOf(product)
+            ] as UnitProduct;
+            unitProduct.setQuantity(finalQuantity);
+        }
+
     }
 
     /**
@@ -44,14 +42,12 @@ export class Order extends CompoundProduct {
      * @param finalWeight 
      */
     public establishWeight(product: PriceInterface, finalWeight: number): void {
-        // if (product instanceof ProductWeight) {
-        //     (
-        //         (ProductWeight) super.getProducts()
-        //             .get(
-        //                 super.getProducts().indexOf(product)
-        //             )
-        //     ).setWeight(finalWeight);
-        // }
+        if (product instanceof ProductWeight) {
+            const productWeight = super.getProducts()[
+                super.getProducts().indexOf(product)
+            ] as ProductWeight;
+            productWeight.setWeight(finalWeight);
+        }
     }
 
 }

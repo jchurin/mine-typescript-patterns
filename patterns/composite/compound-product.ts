@@ -13,7 +13,8 @@ export class CompoundProduct implements PriceInterface {
     }
     
     public removeProduct(price: PriceInterface): void {
-        this.products.slice(1); // TODO: Find key of object value
+        this.products.splice(this.products.indexOf(price), 1);
+        // this.products[this.products.indexOf(price)]; // TODO: Find key of object value
     }
     
     /**

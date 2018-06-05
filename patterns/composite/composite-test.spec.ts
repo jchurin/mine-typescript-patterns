@@ -29,4 +29,7 @@ describe('TEST: Composite class', () => {
         expect(order.getTotalPrice()).to.equal(jamon.getTotalPrice() + fideos.getTotalPrice() + cajaNavideña.getTotalPrice());
     });
 
+    // TODO: Faltan casos de prueba de la cajaNavideña,
+    // sacarle la ñ a cajaNavideña y probar los metodos get que procesan calculos.
+
 });
